@@ -1,0 +1,28 @@
+
+html,
+body {
+	position: relative;
+}
+
+html {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+.hello {
+    font-size: 24px;
+    POSITION: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 150px;
+    color: black;
+    text-decoration: none;
+}
+a {
+    text-decoration: none;
+    color: black;
+   font-family: helvetica;
+}
+a:hover {
+	text-decoration: underline;
+}
