@@ -26,3 +26,13 @@ a {
 a:hover {
 	text-decoration: underline;
 }
+ span {
+    position: absolute;
+    right: 0px;
+    color: gray;
+    padding: 20px;
+}
+
+span > a {
+	color: "grey";
+}
