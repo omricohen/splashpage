@@ -3,11 +3,13 @@ html,
 body {
 	position: relative;
 }
-
 html {
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
+}
+.logo {
+	display: auto;
 }
 .hello {
     font-size: 24px;
