@@ -15,9 +15,12 @@
 var message = null;
 function login() {
     var responseText = document.getElementById('response');
+    var username = document.getElementsByName("username")[0].value;
+    var password = document.getElementsByName("password")[0].value;
     var xmlhttp = new XMLHttpRequest(); var url = "https://rivalgames.herokuapp.com/login"
     xmlhttp.open("POST", url, true);
     xmlhttp.setRequestHeader("Content-type", "application/json");
+    xmlhttp.send(JSON.stringify({username,password}))
     xmlhttp.onload = (res) => {
         message = res['target']['response'];
         responseText.innerHTML = message;
@@ -35,11 +38,11 @@ function login() {
                <h2>Client Login</h2>
                <a class="close" href="#">&times;</a>
                <div class="content">
-                     <label for="uname"><b>Username</b></label>
-                     <input type="text" placeholder="Enter Username" name="uname" required>
+                     <label for="username"><b>Username</b></label>
+                     <input type="text" placeholder="Enter Username" name="username" required>
                  
-                     <label for="psw"><b>Password</b></label>
-                     <input type="password" placeholder="Enter Password" name="psw" required>
+                     <label for="password"><b>Password</b></label>
+                     <input type="password" placeholder="Enter Password" name="password" required>
                      <p style="color:red" id="response"></p>
                      <button onclick="login()" type="button">Login</button>
                </div>
