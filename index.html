@@ -1,7 +1,9 @@
 <html>
 <head>
    <!-- Global site tag (gtag.js) - Google Analytics -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145028706-1"></script>
+<script  src="http://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -10,9 +12,18 @@
   gtag('config', 'UA-145028706-1');
 </script>
 <script>
+var message = null;
 function login() {
-  var x = document.getElementById("verify");
-    x.style.display = "block";
+    var responseText = document.getElementById('response');
+    var xmlhttp = new XMLHttpRequest(); var url = "https://boiling-hollows-02772.herokuapp.com/login"
+    xmlhttp.open("POST", url, true);
+    xmlhttp.setRequestHeader("Content-type", "application/json");
+    xmlhttp.onload = (res) => {
+        message = res['target']['response'];
+        responseText.innerHTML = message;
+
+    };
+    xmlhttp.send();
 }
 </script>
 <title>Rival Games</title>
@@ -29,8 +40,8 @@ function login() {
                  
                      <label for="psw"><b>Password</b></label>
                      <input type="password" placeholder="Enter Password" name="psw" required>
-                     <div id="verify" class="verify">Username/password is invalid.</div>
-                     <button onclick="login()">Login</button>
+                     <p style="color:red" id="response"></p>
+                     <button onclick="login()" type="button">Login</button>
                </div>
             </div>
          </div>
