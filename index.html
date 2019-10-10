@@ -9,12 +9,34 @@
 
   gtag('config', 'UA-145028706-1');
 </script>
+<script>
+function login() {
+  var x = document.getElementById("verify");
+    x.style.display = "block";
+}
+</script>
 <title>Rival Games</title>
    <link rel="stylesheet" media="all" href="style.css" />
 </head>
 <body>
+      <div id="login" class="overlay">
+            <div class="popup">
+               <h2>Client Login</h2>
+               <a class="close" href="#">&times;</a>
+               <div class="content">
+                     <label for="uname"><b>Username</b></label>
+                     <input type="text" placeholder="Enter Username" name="uname" required>
+                 
+                     <label for="psw"><b>Password</b></label>
+                     <input type="password" placeholder="Enter Password" name="psw" required>
+                     <div id="verify" class="verify">Username/password is invalid.</div>
+                     <button onclick="login()">Login</button>
+               </div>
+            </div>
+         </div>
+
    <div class='logo' style="display:none;">
-      <span><a href="#login">login</a></span>
+      <span><a href='mailto:hello@rivalgames.com' >Contact</a></span>
 <img
   id="logo"
   src="logo.png"
@@ -25,7 +47,7 @@
   data-fade-direction="left"
 >
    </div>
-   <div class="hello"><a href='mailto:hello@rivalgames.com'>Say Hello</a></div>
+   <div class="hello"><a href="#login">Client Login</a></div>
    <script src="app.js"></script>
 </body>
 </html>

@@ -1,7 +1,8 @@
 
 html,
 body {
-	position: relative;
+    position: relative;
+    font-family: helvetica;
 }
 html {
 	height: 100%;
@@ -38,3 +39,98 @@ a:hover {
 span > a {
 	color: "grey";
 }
+
+.verify {
+    display: none;
+    color: red;
+    font-size: 12px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+  }
+  
+  .popup h2 {
+    margin-top: 0;
+    color: #333;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: #999;
+  }
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+  }
+  
+  @media screen and (max-width: 700px){
+    .popup{
+      width: 70%;
+    }
+  }
+
+  /* Bordered form */
+form {
+    border: 3px solid #f1f1f1;
+  }
+  
+  /* Full-width inputs */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+    background-color: #9e2d29;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  /* Add a hover effect for buttons */
+  button:hover {
+    opacity: 0.8;
+  }
