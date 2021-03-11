@@ -17,7 +17,7 @@ function login() {
     var responseText = document.getElementById('response');
     var username = document.getElementsByName("username")[0].value;
     var password = document.getElementsByName("password")[0].value;
-    var xmlhttp = new XMLHttpRequest(); var url = "https://rivalgames.herokuapp.com/login"
+    var xmlhttp = new XMLHttpRequest(); var url = "https://enpassantdigital.herokuapp.com/login"
     xmlhttp.open("POST", url, true);
     xmlhttp.setRequestHeader("Content-type", "application/json");
     xmlhttp.send(JSON.stringify({username,password}))
@@ -29,7 +29,7 @@ function login() {
     xmlhttp.send();
 }
 </script>
-<title>Rival Games</title>
+<title>En Passant Digital</title>
    <link rel="stylesheet" media="all" href="style.css" />
 </head>
 <body>
@@ -50,11 +50,11 @@ function login() {
          </div>
 
    <div class='logo' style="display:none;">
-      <span><a href='mailto:hello@rivalgames.com' >Contact</a></span>
+      <span><a href='mailto:hello@enpassantdigital.com' >Contact</a></span>
 <img
   id="logo"
   src="logo.png"
-  alt="Rival Games logo"
+  alt="En Passant logo"
   data-init-position="left"
   data-init-direction="left"
   data-fade-position="left"
